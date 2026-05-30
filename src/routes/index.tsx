@@ -169,27 +169,10 @@ function HomePage() {
     },
   ];
 
-  const timeline = [
-    "Upload Resume",
-    "Resume Parsing",
-    "Skill Extraction",
-    "ATS Evaluation",
-    "AI Analysis",
-    "Skill Gap Detection",
-    "Score Generation",
-    "Final Report",
-  ];
 
-   const suggestions: string[] = [
-    "Improve ATS keyword matching",
-    "Add measurable achievements",
-    "Include Docker experience",
-    "Mention CI/CD skills",
-  ];
 
   const handleAnalyze = async () => {
 
-     console.log("selectedFile =", selectedFile);
 
     if (!selectedFile) {
       alert("Please upload a resume first");
@@ -200,25 +183,12 @@ function HomePage() {
       setLoading(true);
       const result = await uploadResume(selectedFile);
 
-      console.log("Upload Result:", result);
-
       setAnalysisResult(result);
     }catch (error: any) {
-      console.log(error.response);
+     
 
-      console.log(
-      error.response?.status
-      );
+      console.error("Upload failed");
 
-      console.log(
-      error.response?.data
-      );
-      console.log(
-"ERROR",
-error
-);
-
-      console.error("Upload Error:", error);
       alert("Failed to upload resume. Please try again.");
     } finally {
       setLoading(false);

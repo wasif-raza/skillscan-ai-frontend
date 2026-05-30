@@ -7,12 +7,7 @@ export const uploadResume = async (file: File) => {
 
   const response = await api.post(
     "/api/resumes",
-    formData,
-    {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    }
+    formData
   );
 
   return response.data;
