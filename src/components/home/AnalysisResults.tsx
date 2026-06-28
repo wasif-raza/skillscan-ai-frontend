@@ -110,7 +110,7 @@ export default function AnalysisResults({
               )}
             </div>
 
-            {result.guest && (
+            {result.guest && typeof result.hiddenKeywords === "number" && (
               <p className="mt-4 text-yellow-400">
                 +{result.hiddenKeywords}
                 {" "}more locked.

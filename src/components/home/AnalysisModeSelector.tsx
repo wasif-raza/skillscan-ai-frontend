@@ -12,6 +12,8 @@ export default function AnalysisModeSelector({
   return (
     <div className="flex flex-wrap justify-center gap-5">
       <button
+      type="button"
+      aria-pressed={mode === "resume"}
         onClick={() =>
           onChange("resume")
         }
@@ -38,6 +40,8 @@ export default function AnalysisModeSelector({
       </button>
 
       <button
+      type="button"
+      aria-pressed={mode === "resume-jd"}
         onClick={() =>
           onChange("resume-jd")
         }

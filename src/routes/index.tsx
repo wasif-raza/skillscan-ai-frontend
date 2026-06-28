@@ -131,7 +131,7 @@ function HomePage() {
   }
 
   try {
-    await analyze(selectedFile);
+    await analyze(selectedFile,analysisMode === "resume-jd" ? jobDescription : undefined);
   } catch (error) {
     console.error(
       "Upload failed",
