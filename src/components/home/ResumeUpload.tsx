@@ -40,12 +40,20 @@ export default function ResumeUpload({
       />
 
       <div
+        role="button"
+        tabIndex={0}
         onDrop={onDrop}
         onDragOver={onDragOver}
         onDragLeave={onDragLeave}
         onClick={() =>
           fileInputRef.current?.click()
         }
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            fileInputRef.current?.click();
+          }
+        }}
         className={`
           w-full
           max-w-3xl

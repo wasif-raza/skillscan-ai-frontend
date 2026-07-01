@@ -15,13 +15,14 @@ export function useResumeAnalysis() {
     );
 
   const analyze = async (
-    file: File
+    file: File,
+    jobDescription?: string
   ) => {
     try {
       setLoading(true);
 
       const result =
-        await analyzeResume(file);
+        await analyzeResume(file, jobDescription);
 
       setAnalysisResult(result);
 
