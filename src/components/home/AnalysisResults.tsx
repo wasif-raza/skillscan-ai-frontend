@@ -43,7 +43,7 @@ export default function AnalysisResults({
             </p>
 
             <p className="text-3xl font-bold text-green-400">
-              {result.atsScore ?? 0}
+              {result.finalScore ?? 0}
             </p>
           </div>
         </div>
