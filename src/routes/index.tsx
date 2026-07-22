@@ -18,6 +18,7 @@ import AnalysisResults from "../components/home/AnalysisResults";
 import AnalysisModeSelector from "../components/home/AnalysisModeSelector";
 
 import { useResumeAnalysis } from "../hooks/useResumeAnalysis";
+import ThemeToggle from "../Theme/ThemeToggle";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -145,7 +146,7 @@ function HomePage() {
 };
 
   return (
-    <div className="min-h-screen overflow-hidden bg-slate-950 text-white">
+    <div className="min-h-screen overflow-hidden bg-white text-gray-900 transition-colors duration-300 dark:bg-slate-950 dark:text-white">
 
       {/* BACKGROUND */}
 
@@ -161,13 +162,15 @@ function HomePage() {
 
       {/* NAVBAR */}
 
-      <nav className="sticky top-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur-xl">
+      <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-xl transition-colors dark:border-white/10 dark:bg-black/20">
 
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
 
           <h1 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-2xl font-bold text-transparent">
             SkillScan AI
           </h1>
+
+          <ThemeToggle/>
 
           <div className="hidden items-center gap-8 lg:flex">
 
@@ -187,7 +190,7 @@ function HomePage() {
               Pricing
             </a>
 
-            <button className="rounded-xl border border-white/20 px-5 py-2">
+            <button className="rounded-xl border border-gray-300 px-5 py-2 transition-colors dark:border-white/20">
               Login
             </button>
 
@@ -208,8 +211,7 @@ function HomePage() {
 
         {open && (
 
-          <div className="bg-slate-900 px-6 pb-6 lg:hidden">
-
+          <div className="bg-white px-6 pb-6 dark:bg-slate-900 lg:hidden">
             <div className="flex flex-col gap-5">
 
               <a>Home</a>
@@ -279,12 +281,20 @@ function HomePage() {
           disabled={loading}
 
           className="
-          rounded-2xl
-          border
-          border-white/20
-          px-8
-          py-4
-          "
+              rounded-2xl
+              border
+              border-[var(--border)]
+              bg-[var(--card)]
+              px-8
+              py-4
+              text-[var(--text)]
+              transition-all
+              duration-300
+              hover:border-cyan-400
+              hover:bg-cyan-500/10
+              hover:text-cyan-600
+              dark:hover:text-cyan-300
+            "
         >
 
           {
@@ -332,7 +342,19 @@ function HomePage() {
 
             <div
               key={item.label}
-              className="rounded-3xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur-xl"
+              className="
+                    rounded-3xl
+                    border
+                    border-gray-200
+                    bg-white
+                    p-6
+                    text-center
+                    shadow-sm
+                    backdrop-blur-xl
+                    transition-colors
+                    dark:border-white/10
+                    dark:bg-white/5
+                    "
             >
 
               <h2 className="mb-2 text-3xl font-bold">
@@ -373,18 +395,21 @@ function HomePage() {
       <div
         key={item.role}
         className="
-        w-[280px]
-        rounded-3xl
-        border
-        border-white/10
-        bg-white/5
-        p-8
-        backdrop-blur-xl
-        transition
-        duration-300
-        hover:scale-105
-        hover:border-cyan-400/50
-        "
+            w-[280px]
+            rounded-3xl
+            border
+            border-gray-200
+            bg-white
+            p-8
+            shadow-sm
+            backdrop-blur-xl
+            transition-all
+            duration-300
+            hover:scale-105
+            hover:border-cyan-400/50
+            dark:border-white/10
+            dark:bg-white/5
+            "
       >
 
         <FaChartLine
@@ -418,19 +443,47 @@ function HomePage() {
 
         <div className="flex flex-wrap justify-center gap-5">
 
-          <button className="rounded-2xl bg-cyan-500 px-8 py-4"
+          <button className="
+                rounded-2xl
+                border
+                border-[var(--border)]
+                bg-[var(--card)]
+                px-8
+                py-4
+                text-[var(--text)]
+                transition-all
+                duration-300
+                hover:border-cyan-400
+                hover:bg-cyan-500/10
+                hover:text-cyan-600
+                dark:hover:text-cyan-300
+              "
             onClick={() => fileInputRef.current?.click()}
           >
             Upload Resume
           </button>
 
-          <button className="rounded-2xl border border-white/20 px-8 py-4">
+          <button className="
+              rounded-2xl
+              border
+              border-[var(--border)]
+              bg-[var(--card)]
+              px-8
+              py-4
+              text-[var(--text)]
+              transition-all
+              duration-300
+              hover:border-purple-400
+              hover:bg-purple-500/10
+              hover:text-purple-600
+              dark:hover:text-purple-300
+            ">
             Go To Dashboard
           </button>
 
         </div>
 
-        <p className="mt-8 text-slate-400">
+        <p className="mt-8 text-gray-600 dark:text-slate-400">
           Trusted by students • Developers • Recruiters • Job Seekers
         </p>
 
