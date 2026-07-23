@@ -45,9 +45,7 @@ export default function ResumeUpload({
         onDrop={onDrop}
         onDragOver={onDragOver}
         onDragLeave={onDragLeave}
-        onClick={() =>
-          fileInputRef.current?.click()
-        }
+        onClick={() => fileInputRef.current?.click()}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
@@ -64,6 +62,8 @@ export default function ResumeUpload({
           p-12
           text-center
           backdrop-blur-xl
+          transition-all
+          duration-300
 
           ${
             dragActive
@@ -73,21 +73,21 @@ export default function ResumeUpload({
                 scale-105
               `
               : `
-                border-white/20
-                bg-white/5
+                border-[var(--border)]
+                bg-[var(--card)]
               `
           }
         `}
       >
-        <h3 className="text-3xl font-bold">
+        <h3 className="text-3xl font-bold text-[var(--text)]">
           Upload Resume PDF
         </h3>
 
-        <p className="mt-4 text-slate-400">
+        <p className="mt-4 text-[var(--text-secondary)]">
           Drag & Drop Resume
         </p>
 
-        <p className="mt-2 text-sm text-slate-500">
+        <p className="mt-2 text-sm text-[var(--text-secondary)]">
           Click to choose file
         </p>
 
@@ -99,7 +99,9 @@ export default function ResumeUpload({
               bg-green-500/10
               px-6
               py-4
-              text-green-400
+              font-medium
+              text-green-600
+              dark:text-green-400
             "
           >
             Selected: {selectedFile.name}
