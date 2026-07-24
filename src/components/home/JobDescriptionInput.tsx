@@ -12,9 +12,7 @@ export default function JobDescriptionInput({
       <textarea
         rows={8}
         value={value}
-        onChange={(e) =>
-          onChange(e.target.value)
-        }
+        onChange={(e) => onChange(e.target.value)}
         placeholder={`Paste Job Description...
 
 Java Developer
@@ -27,16 +25,21 @@ Microservices`}
           w-full
           rounded-3xl
           border
-          border-purple-400/20
-          bg-white/5
+          border-[var(--border)]
+          bg-[var(--card)]
           p-6
+          text-[var(--text)]
+          placeholder:text-[var(--text-secondary)]
           outline-none
+          transition-colors
+          focus:border-cyan-500
+          focus:ring-2
+          focus:ring-cyan-500/20
         "
       />
 
-      <p className="mt-3 text-slate-400">
-        Match Score • Missing Keywords •
-        Skill Gap Detection
+      <p className="mt-3 text-[var(--text-secondary)]">
+        Match Score • Missing Keywords • Skill Gap Detection
       </p>
     </div>
   );
