@@ -1,5 +1,5 @@
 export interface AnalysisResult {
-  atsScore: number;
+  finalScore: number;
   skills: string[];
   suggestions: string[];
   missingKeywords: string[];
