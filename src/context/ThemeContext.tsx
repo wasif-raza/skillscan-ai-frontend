@@ -1,6 +1,5 @@
 import {
   createContext,
-  useContext,
   useEffect,
   useState,
   type ReactNode,
@@ -13,7 +12,7 @@ interface ThemeContextType {
   toggleTheme: () => void;
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const getInitialTheme = (): Theme => {
@@ -56,14 +55,4 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       {children}
     </ThemeContext.Provider>
   );
-}
-
-export function useThemeContext() {
-  const context = useContext(ThemeContext);
-
-  if (!context) {
-    throw new Error("useThemeContext must be used inside ThemeProvider");
-  }
-
-  return context;
 }
