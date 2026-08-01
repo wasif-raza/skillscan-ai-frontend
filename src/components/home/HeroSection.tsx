@@ -13,7 +13,7 @@ export default function HeroSection() {
         AI Resume Analysis Platform
       </motion.h1>
 
-      <div className="h-20 text-2xl text-cyan-300">
+      <div className="h-20 text-2xl text-cyan-600 dark:text-cyan-300">
         <TypeAnimation
           repeat={Infinity}
           speed={50}

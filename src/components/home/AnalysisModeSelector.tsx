@@ -12,15 +12,15 @@ export default function AnalysisModeSelector({
   return (
     <div className="flex flex-wrap justify-center gap-5">
       <button
-      type="button"
-      aria-pressed={mode === "resume"}
-        onClick={() =>
-          onChange("resume")
-        }
+        type="button"
+        aria-pressed={mode === "resume"}
+        onClick={() => onChange("resume")}
         className={`
           rounded-2xl
           px-8
           py-4
+          transition-all
+          duration-300
 
           ${
             mode === "resume"
@@ -30,8 +30,11 @@ export default function AnalysisModeSelector({
               `
               : `
                 border
-                border-white/20
-                bg-white/5
+                border-[var(--border)]
+                bg-[var(--card)]
+                text-[var(--text)]
+                hover:border-cyan-400
+                hover:bg-cyan-500/10
               `
           }
         `}
@@ -40,15 +43,15 @@ export default function AnalysisModeSelector({
       </button>
 
       <button
-      type="button"
-      aria-pressed={mode === "resume-jd"}
-        onClick={() =>
-          onChange("resume-jd")
-        }
+        type="button"
+        aria-pressed={mode === "resume-jd"}
+        onClick={() => onChange("resume-jd")}
         className={`
           rounded-2xl
           px-8
           py-4
+          transition-all
+          duration-300
 
           ${
             mode === "resume-jd"
@@ -58,8 +61,11 @@ export default function AnalysisModeSelector({
               `
               : `
                 border
-                border-white/20
-                bg-white/5
+                border-[var(--border)]
+                bg-[var(--card)]
+                text-[var(--text)]
+                hover:border-purple-400
+                hover:bg-purple-500/10
               `
           }
         `}
